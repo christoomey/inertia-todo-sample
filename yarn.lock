@@ -64,6 +64,14 @@
     "@babel/helper-explode-assignable-expression" "^7.8.3"
     "@babel/types" "^7.8.3"
 
+"@babel/helper-builder-react-jsx@^7.8.3":
+  version "7.8.3"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/helper-builder-react-jsx/-/helper-builder-react-jsx-7.8.3.tgz#dee98d7d79cc1f003d80b76fe01c7f8945665ff6"
+  integrity sha1-3umNfXnMHwA9gLdv4Bx/iUVmX/Y=
+  dependencies:
+    "@babel/types" "^7.8.3"
+    esutils "^2.0.0"
+
 "@babel/helper-call-delegate@^7.8.3":
   version "7.8.3"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/helper-call-delegate/-/helper-call-delegate-7.8.3.tgz#de82619898aa605d409c42be6ffb8d7204579692"
@@ -352,6 +360,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
 
+"@babel/plugin-syntax-jsx@^7.8.3":
+  version "7.8.3"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.8.3.tgz#521b06c83c40480f1e58b4fd33b92eceb1d6ea94"
+  integrity sha1-UhsGyDxASA8eWLT9M7kuzrHW6pQ=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.8.3"
+
 "@babel/plugin-syntax-nullish-coalescing-operator@^7.8.0":
   version "7.8.3"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/plugin-syntax-nullish-coalescing-operator/-/plugin-syntax-nullish-coalescing-operator-7.8.3.tgz#167ed70368886081f74b5c36c65a88c03b66d1a9"
@@ -573,6 +588,38 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.3"
 
+"@babel/plugin-transform-react-display-name@^7.8.3":
+  version "7.8.3"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/plugin-transform-react-display-name/-/plugin-transform-react-display-name-7.8.3.tgz#70ded987c91609f78353dd76d2fb2a0bb991e8e5"
+  integrity sha1-cN7Zh8kWCfeDU9120vsqC7mR6OU=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.8.3"
+
+"@babel/plugin-transform-react-jsx-self@^7.8.3":
+  version "7.8.3"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.8.3.tgz#c4f178b2aa588ecfa8d077ea80d4194ee77ed702"
+  integrity sha1-xPF4sqpYjs+o0HfqgNQZTud+1wI=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.8.3"
+    "@babel/plugin-syntax-jsx" "^7.8.3"
+
+"@babel/plugin-transform-react-jsx-source@^7.8.3":
+  version "7.8.3"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/plugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.8.3.tgz#951e75a8af47f9f120db731be095d2b2c34920e0"
+  integrity sha1-lR51qK9H+fEg23Mb4JXSssNJIOA=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.8.3"
+    "@babel/plugin-syntax-jsx" "^7.8.3"
+
+"@babel/plugin-transform-react-jsx@^7.8.3":
+  version "7.8.3"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.8.3.tgz#4220349c0390fdefa505365f68c103562ab2fc4a"
+  integrity sha1-QiA0nAOQ/e+lBTZfaMEDViqy/Eo=
+  dependencies:
+    "@babel/helper-builder-react-jsx" "^7.8.3"
+    "@babel/helper-plugin-utils" "^7.8.3"
+    "@babel/plugin-syntax-jsx" "^7.8.3"
+
 "@babel/plugin-transform-regenerator@^7.7.0", "@babel/plugin-transform-regenerator@^7.8.3":
   version "7.8.3"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/plugin-transform-regenerator/-/plugin-transform-regenerator-7.8.3.tgz#b31031e8059c07495bf23614c97f3d9698bc6ec8"
@@ -705,6 +752,17 @@
     levenary "^1.1.1"
     semver "^5.5.0"
 
+"@babel/preset-react@^7.8.3":
+  version "7.8.3"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/preset-react/-/preset-react-7.8.3.tgz#23dc63f1b5b0751283e04252e78cf1d6589273d2"
+  integrity sha1-I9xj8bWwdRKD4EJS54zx1liSc9I=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.8.3"
+    "@babel/plugin-transform-react-display-name" "^7.8.3"
+    "@babel/plugin-transform-react-jsx" "^7.8.3"
+    "@babel/plugin-transform-react-jsx-self" "^7.8.3"
+    "@babel/plugin-transform-react-jsx-source" "^7.8.3"
+
 "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
   version "7.8.4"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@babel/runtime/-/runtime-7.8.4.tgz#d79f5a2040f7caa24d53e563aad49cbc05581308"
@@ -749,6 +807,19 @@
   version "1.4.0"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha1-rUldxBsS511YjG24uYNPCPoTHrc=
+
+"@inertiajs/inertia-react@^0.1.4":
+  version "0.1.4"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@inertiajs/inertia-react/-/inertia-react-0.1.4.tgz#410d7a44156ab55528acaf97b147b67eecb26c96"
+  integrity sha1-QQ16RBVqtVUorK+XsUe2fuyybJY=
+
+"@inertiajs/inertia@^0.1.7":
+  version "0.1.7"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/@inertiajs/inertia/-/inertia-0.1.7.tgz#de0600c32f8d7cec1ea3b1d5121f2cdcaef1d810"
+  integrity sha1-3gYAwy+NfOweo7HVEh8s3K7x2BA=
+  dependencies:
+    axios "^0.19.0"
+    nprogress "^0.2.0"
 
 "@rails/actioncable@^6.0.0":
   version "6.0.2"
@@ -1258,6 +1329,13 @@ aws4@^1.8.0:
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/aws4/-/aws4-1.9.1.tgz#7e33d8f7d449b3f673cd72deb9abdc552dbe528e"
   integrity sha1-fjPY99RJs/ZzzXLeuavcVS2+Uo4=
 
+axios@^0.19.0:
+  version "0.19.2"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha1-PqNsXYgY0NX4qKl6bTa4bNwAyyc=
+  dependencies:
+    follow-redirects "1.5.10"
+
 babel-loader@^8.0.6:
   version "8.0.6"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/babel-loader/-/babel-loader-8.0.6.tgz#e33bdb6f362b03f4bb141a0c21ab87c501b70dfb"
@@ -1283,6 +1361,11 @@ babel-plugin-macros@^2.6.1:
     "@babel/runtime" "^7.7.2"
     cosmiconfig "^6.0.0"
     resolve "^1.12.0"
+
+babel-plugin-transform-react-remove-prop-types@^0.4.24:
+  version "0.4.24"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.24.tgz#f2edaf9b4c6a5fbe5c1d678bfb531078c1555f3a"
+  integrity sha1-8u2vm0xqX75cHWeL+1MQeMFVXzo=
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -2257,6 +2340,13 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   dependencies:
     ms "2.0.0"
 
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha1-W7WgZyYotkFJVmuhaBnmFRjGcmE=
+  dependencies:
+    ms "2.0.0"
+
 debug@^3.0.0, debug@^3.1.1, debug@^3.2.5:
   version "3.2.6"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
@@ -2609,7 +2699,7 @@ estraverse@^4.1.0, estraverse@^4.1.1:
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/estraverse/-/estraverse-4.3.0.tgz#398ad3f3c5a24948be7725e83d11a7de28cdbd1d"
   integrity sha1-OYrT88WiSUi+dyXoPRGn3ijNvR0=
 
-esutils@^2.0.2:
+esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.3"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha1-dNLrTeC42hKTcRkQ1Qd1ubcQ72Q=
@@ -2890,6 +2980,13 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
+
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha1-e3qfmuov3/NnhqlP9kPtB/T/Xio=
+  dependencies:
+    debug "=3.1.0"
 
 follow-redirects@^1.0.0:
   version "1.10.0"
@@ -4062,7 +4159,7 @@ loglevel@^1.6.6:
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/loglevel/-/loglevel-1.6.7.tgz#b3e034233188c68b889f5b862415306f565e2c56"
   integrity sha1-s+A0IzGIxouIn1uGJBUwb1ZeLFY=
 
-loose-envify@^1.0.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=
@@ -4585,6 +4682,11 @@ npm-run-path@^2.0.0:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 nth-check@^1.0.2:
   version "1.0.2"
@@ -5710,6 +5812,15 @@ promise-inflight@^1.0.1:
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
 
+prop-types@^15.6.2, prop-types@^15.7.2:
+  version "15.7.2"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
+  integrity sha1-UsQedbjIfnK52TYOAga5ncv/psU=
+  dependencies:
+    loose-envify "^1.4.0"
+    object-assign "^4.1.1"
+    react-is "^16.8.1"
+
 proxy-addr@~2.0.5:
   version "2.0.5"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/proxy-addr/-/proxy-addr-2.0.5.tgz#34cbd64a2d81f4b1fd21e76f9f06c8a45299ee34"
@@ -5852,6 +5963,30 @@ raw-body@2.4.0:
     http-errors "1.7.2"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
+
+react-dom@^16.12.0:
+  version "16.12.0"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/react-dom/-/react-dom-16.12.0.tgz#0da4b714b8d13c2038c9396b54a92baea633fe11"
+  integrity sha1-DaS3FLjRPCA4yTlrVKkrrqYz/hE=
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.18.0"
+
+react-is@^16.8.1:
+  version "16.12.0"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
+  integrity sha1-LMD+D7p0LZf9UnxCoTvsTusGJBw=
+
+react@^16.12.0:
+  version "16.12.0"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
+  integrity sha1-DAqcahQkKeNhSDTVp3jhiqeKC4M=
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 read-cache@^1.0.0:
   version "1.0.0"
@@ -6174,6 +6309,14 @@ sax@~1.2.4:
   version "1.2.4"
   resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha1-KBYjTiN4vdxOU1T6tcqold9xANk=
+
+scheduler@^0.18.0:
+  version "0.18.0"
+  resolved "https://indigoag.jfrog.io/indigoag/api/npm/npm/scheduler/-/scheduler-0.18.0.tgz#5901ad6659bc1d8f3fdaf36eb7a67b0d6746b1c4"
+  integrity sha1-WQGtZlm8HY8/2vNut6Z7DWdGscQ=
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 schema-utils@^1.0.0:
   version "1.0.0"

@@ -107,6 +107,7 @@ GEM
     honeybadger (4.5.6)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    inertia_rails (1.3.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     listen (3.2.1)
@@ -256,6 +257,7 @@ DEPENDENCIES
   dotenv-rails
   formulaic
   honeybadger
+  inertia_rails
   launchy
   listen
   pg

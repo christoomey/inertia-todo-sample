@@ -12,6 +12,7 @@ gem "autoprefixer-rails"
 
 gem "bootsnap", require: false
 gem "honeybadger"
+gem "inertia_rails"
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
