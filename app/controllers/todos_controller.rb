@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   def index
-    todos = Todo.all
+    todos = Todo.all.order(created_at: :desc)
 
     render inertia: 'Todos', props: {
       name: params.fetch(:name, "World"),
