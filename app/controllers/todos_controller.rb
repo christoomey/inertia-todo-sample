@@ -11,19 +11,19 @@ class TodosController < ApplicationController
   def create
     Todo.create(params.require(:todo).permit(:title))
 
-    redirect_to action: :index
+    redirect_back(fallback_location: todos_path)
   end
 
   def destroy
     Todo.find(params.fetch(:id)).destroy
 
-    redirect_to action: :index
+    redirect_back(fallback_location: todos_path)
   end
 
   def update
     todo = Todo.find(params.fetch(:id))
     todo.update!(params.require(:todo).permit(:title))
 
-    redirect_to action: :index
+    redirect_back(fallback_location: todos_path)
   end
 end
