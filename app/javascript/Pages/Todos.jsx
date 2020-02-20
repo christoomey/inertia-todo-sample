@@ -1,13 +1,21 @@
 import React from 'react';
 import { Inertia } from '@inertiajs/inertia'
 import { parseForm } from "../util/parseForm"
-import { motion } from 'framer-motion'
+import FlipMove from 'react-flip-move';
 
 const Todos = ({name, todos}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
     Inertia.post('/todos', { todo: parseForm(e.target) }).then(() => form.reset())
+  }
+
+  const handleDelete = (id) => {
+    Inertia.delete(`/todos/${id}`, {
+      replace: true,
+      preserveState: true,
+      preserveScroll: true,
+    })
   }
 
   return (
@@ -20,18 +28,17 @@ const Todos = ({name, todos}) => {
       </form>
 
       <ul>
-        {todos.map(todo => (
-          <motion.li
-            initial={{ opacity: 0, scale: 0.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            key={todo.id}
-          >
-            {todo.title}
-          </motion.li>
-        ))}
+        <FlipMove enterAnimation="elevator" leaveAnimation="accordionVertical">
+          {todos.map(todo => (
+            <li key={todo.id}>
+              <button onClick={() => handleDelete(todo.id)}>X</button>
+              {todo.title}
+            </li>
+          ))}
+        </FlipMove>
       </ul>
     </div>
-      )
+  )
 }
 
 export default Todos

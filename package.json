@@ -10,10 +10,10 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "framer-motion": "^1.8.4",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-flip-move": "^3.0.4"
   },
   "version": "0.1.0",
   "devDependencies": {

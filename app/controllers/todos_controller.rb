@@ -11,6 +11,12 @@ class TodosController < ApplicationController
   def create
     Todo.create(params.require(:todo).permit(:title))
 
-    redirect_to to: :index
+    redirect_to action: :index
+  end
+
+  def destroy
+    Todo.find(params.fetch(:id)).destroy
+
+    redirect_to action: :index
   end
 end
