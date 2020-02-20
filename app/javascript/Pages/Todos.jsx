@@ -11,13 +11,22 @@ const Todos = ({name, todos}) => {
     Inertia.post('/todos', { todo: parseForm(e.target) }).then(() => form.reset())
   }
 
-  const handleDelete = (id) => {
+  const handleDelete = (id) => (
     Inertia.delete(`/todos/${id}`, {
       replace: true,
       preserveState: true,
       preserveScroll: true,
     })
-  }
+  )
+
+  const handleUpdate = (id, data) => (
+    Inertia.patch(`/todos/${id}`, { todo: data }, {
+      replace: true,
+      preserveState: true,
+      preserveScroll: true,
+    })
+  )
+
 
   return (
     <div>
@@ -30,7 +39,14 @@ const Todos = ({name, todos}) => {
 
       <ul>
         <FlipMove enterAnimation="elevator" leaveAnimation="accordionVertical">
-          {todos.map(todo => <Todo key={todo.id} todo={todo} handleDelete={handleDelete} />)}
+          {todos.map(todo => (
+            <Todo
+              key={todo.id}
+              todo={todo}
+              onDelete={handleDelete}
+              onUpdate={handleUpdate}
+            />
+          ))}
         </FlipMove>
       </ul>
     </div>

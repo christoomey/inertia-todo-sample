@@ -19,4 +19,11 @@ class TodosController < ApplicationController
 
     redirect_to action: :index
   end
+
+  def update
+    todo = Todo.find(params.fetch(:id))
+    todo.update!(params.require(:todo).permit(:title))
+
+    redirect_to action: :index
+  end
 end

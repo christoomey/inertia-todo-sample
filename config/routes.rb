@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root to: "homes#show"
 
-  resources :todos, only: [:index, :create, :destroy]
+  resources :todos, only: [:index, :create, :destroy, :update]
 end
