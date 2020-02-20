@@ -1,6 +1,7 @@
 import React from 'react';
 import { Inertia } from '@inertiajs/inertia'
 import { parseForm } from "../util/parseForm"
+import { Todo } from "../components/Todo"
 import FlipMove from 'react-flip-move';
 
 const Todos = ({name, todos}) => {
@@ -29,12 +30,7 @@ const Todos = ({name, todos}) => {
 
       <ul>
         <FlipMove enterAnimation="elevator" leaveAnimation="accordionVertical">
-          {todos.map(todo => (
-            <li key={todo.id}>
-              <button onClick={() => handleDelete(todo.id)}>X</button>
-              {todo.title}
-            </li>
-          ))}
+          {todos.map(todo => <Todo key={todo.id} todo={todo} handleDelete={handleDelete} />)}
         </FlipMove>
       </ul>
     </div>
