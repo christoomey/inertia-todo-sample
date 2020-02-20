@@ -1,40 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Inertia } from '@inertiajs/inertia'
 import { parseForm } from "../util/parseForm"
 import { Todo } from "../components/Todo"
 import FlipMove from 'react-flip-move';
 
 const Todos = ({name, todos}) => {
+  const [isLoading, setIsLoading] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
-    Inertia.post('/todos', { todo: parseForm(e.target) }).then(() => form.reset())
+    setIsLoading(true);
+    Inertia.post('/todos', { todo: parseForm(e.target) }).then(() => {
+      setIsLoading(false);
+      form.reset()
+    })
   }
-
-  const handleDelete = (id) => (
-    Inertia.delete(`/todos/${id}`, {
-      replace: true,
-      preserveState: true,
-      preserveScroll: true,
-    })
-  )
-
-  const handleUpdate = (id, data) => (
-    Inertia.patch(`/todos/${id}`, { todo: data }, {
-      replace: true,
-      preserveState: true,
-      preserveScroll: true,
-    })
-  )
-
 
   return (
     <div>
       <p>Hiya, {name}!</p>
 
       <form onSubmit={handleSubmit}>
-        <input type="text" name="title" />
-        <input type="submit" value="Create" />
+        <fieldset disabled={isLoading}>
+          <input autoFocus type="text" name="title" />
+          <input type="submit" value="Create" />
+        </fieldset>
       </form>
 
       <ul>
@@ -52,5 +42,21 @@ const Todos = ({name, todos}) => {
     </div>
   )
 }
+
+const handleDelete = (id) => (
+  Inertia.delete(`/todos/${id}`, {
+    replace: true,
+    preserveState: true,
+    preserveScroll: true,
+  })
+)
+
+const handleUpdate = (id, data) => (
+  Inertia.patch(`/todos/${id}`, { todo: data }, {
+    replace: true,
+    preserveState: true,
+    preserveScroll: true,
+  })
+)
 
 export default Todos
