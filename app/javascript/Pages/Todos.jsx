@@ -1,6 +1,7 @@
 import React from 'react';
 import { Inertia } from '@inertiajs/inertia'
 import { parseForm } from "../util/parseForm"
+import { motion } from 'framer-motion'
 
 const Todos = ({name, todos}) => {
   const handleSubmit = (e) => {
@@ -20,7 +21,13 @@ const Todos = ({name, todos}) => {
 
       <ul>
         {todos.map(todo => (
-          <li key={todo.id}>{todo.title}</li>
+          <motion.li
+            initial={{ opacity: 0, scale: 0.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            key={todo.id}
+          >
+            {todo.title}
+          </motion.li>
         ))}
       </ul>
     </div>
