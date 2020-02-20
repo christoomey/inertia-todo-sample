@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { InertiaApp } from '@inertiajs/inertia-react';
+import axios from 'axios'
+
+axios.defaults.xsrfHeaderName = 'X-CSRF-Token'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(

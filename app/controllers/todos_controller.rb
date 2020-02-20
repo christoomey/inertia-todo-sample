@@ -7,4 +7,10 @@ class TodosController < ApplicationController
       todos: todos.as_json(only: [:id, :title]),
     }
   end
+
+  def create
+    Todo.create(params.require(:todo).permit(:title))
+
+    redirect_to to: :index
+  end
 end
