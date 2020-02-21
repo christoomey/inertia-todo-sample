@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Inertia } from '@inertiajs/inertia'
+import { InertiaLink } from '@inertiajs/inertia-react';
 import { parseForm } from "../util/parseForm"
 import { Todo } from "../components/Todo"
 import FlipMove from 'react-flip-move';
 
-const Todos = ({name, todos}) => {
+const Todos = ({name, todos, activeCount, totalCount}) => {
   const [isLoading, setIsLoading] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -46,8 +47,15 @@ const Todos = ({name, todos}) => {
         </FlipMove>
       </ul>
       <div>
-        <p>{todos.filter(t => !t.complete).length}/{todos.length} remaining
-          <button onClick={sweep}>sweep</button>
+        <p>{activeCount}/{totalCount} remaining
+          {activeCount != totalCount && (
+            <button onClick={sweep}>sweep</button>
+          )}
+        </p>
+        <p className="filters">
+          <InertiaLink href="/todos">All</InertiaLink>
+          <InertiaLink href="/todos?filter=active">Active</InertiaLink>
+          <InertiaLink href="/todos?filter=completed">Completed</InertiaLink>
         </p>
       </div>
     </div>

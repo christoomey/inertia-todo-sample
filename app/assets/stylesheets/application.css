@@ -18,3 +18,8 @@
   max-width: 400px;
   margin: 20px auto;
 }
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+}
