@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :todos, only: [:index, :create, :destroy, :update] do
     resource :completion, only: [:create, :destroy]
   end
+  resource :sweep, only: [:create]
 end

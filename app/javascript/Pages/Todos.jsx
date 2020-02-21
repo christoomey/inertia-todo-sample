@@ -16,8 +16,13 @@ const Todos = ({name, todos}) => {
     })
   }
 
+  const sweep = () => {
+    setIsLoading(true);
+    Inertia.post('/sweep').then(() => setIsLoading(false))
+  }
+
   return (
-    <div>
+    <div className="page">
       <p>Hiya, {name}!</p>
 
       <form onSubmit={handleSubmit}>
@@ -40,6 +45,11 @@ const Todos = ({name, todos}) => {
           ))}
         </FlipMove>
       </ul>
+      <div>
+        <p>{todos.filter(t => !t.complete).length}/{todos.length} remaining
+          <button onClick={sweep}>sweep</button>
+        </p>
+      </div>
     </div>
   )
 }
