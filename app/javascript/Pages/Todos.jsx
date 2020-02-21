@@ -35,6 +35,7 @@ const Todos = ({name, todos}) => {
               todo={todo}
               onDelete={handleDelete}
               onUpdate={handleUpdate}
+              toggleComplete={toggleComplete}
             />
           ))}
         </FlipMove>
@@ -42,6 +43,20 @@ const Todos = ({name, todos}) => {
     </div>
   )
 }
+
+const toggleComplete = (todo) => (
+  todo.complete
+    ? (Inertia.delete(`/todos/${todo.id}/completion`, {
+      replace: true,
+      preserveState: true,
+      preserveScroll: true,
+    }))
+    : (Inertia.post(`/todos/${todo.id}/completion`, {
+      replace: true,
+      preserveState: true,
+      preserveScroll: true,
+    }))
+)
 
 const handleDelete = (id) => (
   Inertia.delete(`/todos/${id}`, {

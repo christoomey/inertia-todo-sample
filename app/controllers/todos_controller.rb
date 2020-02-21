@@ -4,7 +4,7 @@ class TodosController < ApplicationController
 
     render inertia: 'Todos', props: {
       name: params.fetch(:name, "World"),
-      todos: todos.as_json(only: [:id, :title]),
+      todos: todos.as_json(only: [:id, :title, :complete]),
     }
   end
 
