@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Inertia } from '@inertiajs/inertia'
 import { InertiaLink } from '@inertiajs/inertia-react';
 import { parseForm } from "../util/parseForm"
@@ -7,13 +7,15 @@ import FlipMove from 'react-flip-move';
 
 const Todos = ({name, todos, activeCount, totalCount}) => {
   const [isLoading, setIsLoading] = useState(false);
+  const inputRef = useRef(null);
   const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
     setIsLoading(true);
     Inertia.post('/todos', { todo: parseForm(e.target) }).then(() => {
       setIsLoading(false);
-      form.reset()
+      form.reset();
+      inputRef.current.focus();
     })
   }
 
@@ -28,7 +30,7 @@ const Todos = ({name, todos, activeCount, totalCount}) => {
 
       <form onSubmit={handleSubmit}>
         <fieldset disabled={isLoading}>
-          <input autoFocus type="text" name="title" />
+          <input autoFocus type="text" name="title" ref={inputRef} />
           <input type="submit" value="Create" />
         </fieldset>
       </form>
