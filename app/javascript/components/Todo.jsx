@@ -17,10 +17,16 @@ export const Todo = forwardRef(({todo, onDelete, onUpdate, toggleComplete}, ref)
     onDelete(todo.id)
   }
 
+  const onCompleteToggle = () => {
+    setIsLoading(true);
+    toggleComplete(todo).then(() => setIsLoading(false));
+  }
+
+
   return (
     <li key={todo.id} ref={ref}>
       <span className="actions">
-        <button onClick={() => toggleComplete(todo)} disabled={isLoading}>
+        <button onClick={onCompleteToggle} disabled={isLoading}>
           {todo.complete ? '[x]' : '[ ]'}
         </button>
         <button onClick={onDeleteClick} disabled={isLoading}>X</button>{' '}
